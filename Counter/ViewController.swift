@@ -21,6 +21,7 @@ final class ViewController: UIViewController {
 			counterLabel.text = String(counterValue)
 		}
 	}
+
 	private let dateFormatter: DateFormatter = {
 		let dateFormatter = DateFormatter()
 		// Формат даты и времени
@@ -58,26 +59,6 @@ final class ViewController: UIViewController {
 		containerView.layer.mask = gradientLayer
 	}
 
-	// MARK: - Action Methods
-	@IBAction private func redButtonAction(_ sender: Any) {
-		updateCounter(by: 1)
-	}
-
-	@IBAction private func blueButtonAction(_ sender: Any) {
-		guard counterValue > 0 else {
-			// перенос строки добавлен, чтобы избежать глюков скрола
-			// при автопереносе длинной строки
-			// [нужна подсказка, как решить эту пробему правильно]
-			textLogAppendText("Попытка уменьшить\nзначение счётчика\nниже 0")
-			return
-		}
-		updateCounter(by: -1)
-	}
-
-	@IBAction private func resetButtonAction(_ sender: Any) {
-		resetCounter()
-	}
-
 	// MARK: - Helper Methods
 	private func updateCounter(by value: Int) {
 		// обновляем счетчик
@@ -108,5 +89,25 @@ final class ViewController: UIViewController {
 		logTextView.text.append("[\(dateText)]\n\(text)\n")
 		let range = NSRange(location: logTextView.text.count - 1, length: 1)
 		logTextView.scrollRangeToVisible(range)
+	}
+	
+	// MARK: - Action Methods
+	@IBAction private func redButtonAction(_ sender: Any) {
+		updateCounter(by: 1)
+	}
+
+	@IBAction private func blueButtonAction(_ sender: Any) {
+		guard counterValue > 0 else {
+			// перенос строки добавлен, чтобы избежать глюков скрола
+			// при автопереносе длинной строки
+			// [нужна подсказка, как решить эту пробему правильно]
+			textLogAppendText("Попытка уменьшить\nзначение счётчика\nниже 0")
+			return
+		}
+		updateCounter(by: -1)
+	}
+
+	@IBAction private func resetButtonAction(_ sender: Any) {
+		resetCounter()
 	}
 }
