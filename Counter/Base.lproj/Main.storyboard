@@ -34,7 +34,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="＋"/>
                                         <connections>
-                                            <action selector="redButAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SZr-kk-FUz"/>
+                                            <action selector="redButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SZr-kk-FUz"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2t-JH-OTT" userLabel="Reset Button">
@@ -46,7 +46,7 @@
                                             <imageReference key="image" image="arrow.3.trianglepath" catalog="system" symbolScale="large" variableValue="0.80000000000000004"/>
                                         </state>
                                         <connections>
-                                            <action selector="resetButAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w4k-ui-ZBa"/>
+                                            <action selector="resetButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w4k-ui-ZBa"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QdD-le-0e9">
@@ -57,7 +57,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="－"/>
                                         <connections>
-                                            <action selector="blueButAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kFO-kc-2po"/>
+                                            <action selector="blueButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kFO-kc-2po"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -108,8 +108,8 @@
                         <outlet property="blueButton" destination="QdD-le-0e9" id="d1i-5N-EUZ"/>
                         <outlet property="containerView" destination="21S-Iy-CJB" id="JKq-Ut-xyP"/>
                         <outlet property="counterLabel" destination="P7K-bl-b1y" id="YxD-fa-l7V"/>
+                        <outlet property="logTextView" destination="YDe-m4-vee" id="hF9-bu-r73"/>
                         <outlet property="redButton" destination="N1X-dT-ObB" id="qbA-iS-hHU"/>
-                        <outlet property="textLog" destination="YDe-m4-vee" id="hF9-bu-r73"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -126,10 +126,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
