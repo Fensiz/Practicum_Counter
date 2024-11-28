@@ -36,6 +36,19 @@ final class ViewController: UIViewController {
 		setCornerRadius()
 		setTextViewTransparency()
 	}
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+
+		counterValue = UserDefaults.standard.integer(forKey: "counterValue")
+		logTextView.text = UserDefaults.standard.string(forKey: "logText")
+		scrollToLastLine()
+	}
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+
+		UserDefaults.standard.set(counterValue, forKey: "counterValue")
+		UserDefaults.standard.set(logTextView.text, forKey: "logText")
+	}
 
 	// MARK: - Setup Methods
 	private func setCornerRadius() {
@@ -87,10 +100,14 @@ final class ViewController: UIViewController {
 		let dateText = dateFormatter.string(from: Date())
 		// Добавляем текст и прокручиваем вниз
 		logTextView.text.append("[\(dateText)]\n\(text)\n")
+		scrollToLastLine()
+	}
+
+	private func scrollToLastLine() {
 		let range = NSRange(location: logTextView.text.count - 1, length: 1)
 		logTextView.scrollRangeToVisible(range)
 	}
-	
+
 	// MARK: - Action Methods
 	@IBAction private func redButtonAction(_ sender: Any) {
 		updateCounter(by: 1)
